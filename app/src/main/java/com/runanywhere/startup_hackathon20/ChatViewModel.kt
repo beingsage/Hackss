@@ -76,6 +76,7 @@ class ChatViewModel : ViewModel() {
                 val success = RunAnywhere.loadModel(modelId)
                 if (success) {
                     _currentModelId.value = modelId
+                    ModelState.currentModelId = modelId
                     _statusMessage.value = "Model loaded! Ready to chat."
                 } else {
                     _statusMessage.value = "Failed to load model"
